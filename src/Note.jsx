@@ -1,13 +1,21 @@
 import React from "react"
 
-function Note(){
+
+function Note(props){
+
+    function handleClick(){
+        props.onDelete(props.id)
+    }
+
+
     return <div className="note">
-        <h1 contentEditable="true">
-            Title
+        <h1>
+            {props.title}
         </h1>
-        <p contentEditable="true">
-            Content
+        <p>
+            {props.content}
         </p>
+        <button onClick={handleClick}>DELETE</button>
     </div>
 }
 
